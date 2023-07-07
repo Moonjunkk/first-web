@@ -4,48 +4,58 @@
 <head>
     <title>JavaScript</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css"> <!-- design tag-->
+    <script src="changebutton.js">
+    </script>
 </head>
 
-<body style="background-color: white; color:black;">
-    <h1> <a href="index.html">WEB</a> </h1>
+<body>
+   <h1> <a href="index.html">WEB</a> </h1>
 
-    <ol>
+<div class="contain">
+<div class="div1">
+    <ol class="chart">
         <li><a href="html.html">HTML</a></li>
         <li><a href="css.html">CSS</a></li>
         <li><a href="javascript.html">JavaScript</a></li>
     </ol>
-<h1>JavaScript</h1>
+</div>
+
+<div>
+<h2>JavaScript</h2>
 <script>
-    var name= 'moon'
-    document.write( 'hello '+name+'hello ');
-   
+    document.write( 'studying how to use objects and variables.<br>');
+   document.write( '<h3> how to write objects.</h3>');
+   var coworkers = {
+    "programmer":"egoing",
+    "desinger":"moon"
+   };
+   for(var key in coworkers){
+     document.write(key+":"+coworkers[key]+'<br>');
+   }
 </script>
 
-<input type="button" value="night" onclick="
-document.querySelector('body').style.backgroundColor='black';
-document.querySelector('body').style.color='white';
-">
-<input type="button" value="day" onclick="
-document.querySelector('body').style.backgroundColor='white';
-document.querySelector('body').style.color='black';
-">
-<br>
-<input id="night_day" type="button" value="night" onclick="
-    if(document.querySelector('#night_day').value === 'night'){
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.Color = 'white';
-        document.querySelector('#night_day').value = 'day';
-    } else {
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.Color = 'black';
-        document.querySelector('#night_day').value = 'night';
+<script>
+    coworkers.showAll = function(){
+        for(var key in this){
+     document.write(key+":"+this[key]+'<br>');
+        }
     }
-">
-<br>
-<span style="font-weight: bold;">
+    coworkers.showAll();
+    document.write('method란 객체 내에 선언된 함수를 의미한다.')
+</script>
+
+<p>
+<input id="mode" type="button" value="day" onclick="change.nightday(this);">
+</p>
+
+<div style="font-weight: bold;">
     <input type="button" value="login" onclick="alert('hello')">
     id:<input type="text" onchange="alert('changed')">
     password:<input type="text" onkeydown="alert('key down!')">
-</span>
+</div>
+
+</div>
+</div>
 
 </body>
